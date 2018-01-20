@@ -33,9 +33,12 @@ namespace ImageLibrary
 
             // Assembly folder name
             var path = Path.GetDirectoryName(assemblyFile);
-
-            Debug.WriteLine(path);
-            Debug.WriteLine(Directory.Exists(path));
+            
+            // Check for library
+            if (!Directory.Exists(path))
+            {
+                throw new DirectoryNotFoundException("Impossibile trovare la directory dei files ghostscript");
+            }
 
             MagickNET.SetGhostscriptDirectory(Path.Combine(path, "ghostscript"));
 

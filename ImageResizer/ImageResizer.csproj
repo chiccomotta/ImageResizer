@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="7.3.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ImageLibrary\ImageLibrary.csproj" />
   </ItemGroup>
 
