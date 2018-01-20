@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>CMSoft.Shared.ImageLibrary</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>Cristiano Motta</Authors>
+    <Description>Image resizer utility</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes>First release</PackageReleaseNotes>
+    <Copyright>Copyright 2017 (c) Cristiano Motta. All rights reserved.</Copyright>
+    <PackageTags>images resize magick.net</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

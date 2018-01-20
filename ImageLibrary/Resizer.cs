@@ -6,7 +6,7 @@ using ImageMagick;
 
 namespace ImageLibrary
 {
-    public class Resizer
+    public static class Resizer
     {
         public static void PdfToImage()
         {
