@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using ImageMagick;
@@ -25,12 +26,16 @@ namespace ImageLibrary
 
              MagickNET.SetGhostscriptDirectory(@"C:\MyProgram\Ghostscript");
           */
-            string assemblyFile = (
-                new System.Uri(Assembly.GetExecutingAssembly().CodeBase)
-            ).AbsolutePath;
 
+            // Assembly Absolute Path 
+            string assemblyFile = new Uri(Assembly.GetExecutingAssembly().CodeBase)
+                .LocalPath;
+
+            // Assembly folder name
             var path = Path.GetDirectoryName(assemblyFile);
+
             Debug.WriteLine(path);
+            Debug.WriteLine(Directory.Exists(path));
 
             MagickNET.SetGhostscriptDirectory(Path.Combine(path, "ghostscript"));
 
