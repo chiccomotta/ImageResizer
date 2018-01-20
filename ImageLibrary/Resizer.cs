@@ -54,13 +54,24 @@ namespace ImageLibrary
                 int page = 1;
                 foreach (MagickImage image in images)
                 {
+                    // resize
                     image.Resize(150, 150);
+                    
                     // Write page to file that contains the page number
                     image.Write("Snakeware.Page" + page + ".png");
+                    
                     // Writing to a specific format works the same as for a single image
                     //image.Format = MagickFormat.Ptif;
                     //image.Write("Snakeware.Page" + page + ".tif");
                     page++;
+
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        image.Write(ms);
+
+                        var bytes = ms.ToArray();
+                        Debug.WriteLine((int)bytes.Length / 1024);
+                    }
                 }
             }
 
